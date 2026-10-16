@@ -3,6 +3,7 @@ from torch.utils.data import DataLoader
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
+import sounddevice as sd
 
 from wake_word_v1 import WakeWordCRNN
 from dataset_loader_v1 import WakeWordDataset
@@ -33,7 +34,7 @@ criterion = nn.BCELoss() # Calculates the loss /epoch.
 optimizer = optim.Adam(model.parameters(), lr=0.001) #Adjust the weights using the Adam Optimizer.
 
 # Training loop
-epochs = 10 # How many times the model sees the training data.
+epochs = 20 # How many times the model sees the training data.
 
 for epoch in range(epochs): # For every epoch in the epoch range(10)
     total_loss = 0
