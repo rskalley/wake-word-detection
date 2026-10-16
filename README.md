@@ -5,4 +5,6 @@ The project so far is made up of 4 files.
 * Record_audio - this script is used to record short audio clips for training and testing but also converts everything to the necessary audio requirements needed for speech recognition i.e. 16-bit PCM, Mono, .wav files.
 * Dataset_loader - This loads the files from the respected folders (positive/negative) and performs necessary operations such as MFCC extraction and ensuring the clip is exactly 1 second long before feeding it to our wakeword.
 * training_script - this is where the model is trained using the positive/negative/unseen samples that were created and displays a detailed evaluation of how each clip performed.
-* Wake_word - this is where the base of our model is. (NEEDS A GOOD DESCRIPTION)  
+* Wake_word - the kyro wake word system is a binary audio classifier built using a CNN-GRU (CRNN) architecture and it's job is to determine whether a 1 second audio clip contains the wakeword kyro or not.
+
+16/10 **** The model performs strongly on one-second wake word clips and unseen test recordings (both clean and noisy samples). However, live continuous listening revealed that wake word placement within the detection window impacts activation reliability. This suggests that I need to figure out how to make sure that the wake word can always be detected through a one second window because right now, it seems like as I'm saying the wake word it's being chopped up between intervals.
